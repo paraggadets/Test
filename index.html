@@ -81,8 +81,8 @@
 
       fetch(scriptURL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action, email, name, phone })
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ action, email, name, phone })
       })
       .then(res => res.json())
       .then(data => {
